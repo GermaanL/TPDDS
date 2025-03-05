@@ -1,0 +1,6 @@
+Tipo Doc,Documento,Nombre,Apellido,Mail,Fecha de colaboracion,Forma de colaboracion,Cantidad
+DNI,42024242,Luis,Perez,luisperez@gmail.com,05/06/2021,DINERO,3000
+DNI,42024243,Pablo,Gomez,pablo@gmail.com,06/07/2024,DONACION_VIANDAS,2
+DNI,42024244,Lucia,Martinez,lumartinez@gmail.com,07/08/2027,REDISTRIBUCION_VIANDAS,3
+DNI,42024242,Luis,Perez,luisperez@gmail.com,07/09/2030,DINERO,20000
+DNI,42024242,Luis,Perez,luisperez@gmail.com,06/09/2022,ENTREGA_TARJETAS,3

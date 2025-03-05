@@ -1,0 +1,20 @@
+{{#partial "contenido"}}
+
+    <section class="text-center form-container form">
+        <h2>Autorizar tarjeta</h2>
+        <form class ="" id="autorizarTarjetaForm" action="/autorizarTarjeta" method="POST">
+            <label for="codigoTarjeta">Ingrese el código de la tarjeta recibida:</label><br><br>
+            <input type="text" id="codigoTarjeta" name="codigoTarjeta" required><br><br>
+
+            <div class="text-end">
+                <button id="btnAutorizarTarjetaForm" type="submit" class="btn btn-custom">Autorizar</button>
+            </div>
+        </form>
+    </section>
+
+{{/partial}}
+{{#partial "scripts"}}
+    <script src="/js/commons.js"></script>
+    <script src="/js/scriptIndex.js"></script>
+{{/partial}}
+{{> templates/index }}

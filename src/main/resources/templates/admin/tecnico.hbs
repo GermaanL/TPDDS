@@ -1,0 +1,98 @@
+{{#partial "contenido"}}
+    <div class="container form-container my-4">
+        <form class="m-auto form" method="POST" action="/tecnicos/modificar">
+            <input type="hidden" name="id" value="{{tecnico.id}}">
+
+            <!-- Fila 1: Nombre y Apellido -->
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input name="nombre" type="text" class="form-control" id="nombre" value="{{tecnico.nombre}}" placeholder="Nombre del técnico">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input name="apellido" type="text" class="form-control" id="apellido" value="{{tecnico.apellido}}" placeholder="Apellido del técnico">
+                </div>
+            </div>
+
+            <!-- Tipo de Documento y Número de Documento -->
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <label for="tipoDocumento" class="form-label">Tipo de Documento</label>
+                    <select name="tipoDocumento" id="tipoDocumento" class="form-select">
+                        {{#each tipoDocumento}}
+                            <option value="{{this}}" {{eq ../tecnico.documento.tipoDocumento.name this}}>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="numeroDocumento" class="form-label">Número de Documento</label>
+                    <input name="numeroDocumento" type="text" class="form-control" id="numeroDocumento" value="{{tecnico.documento.numeroDocumento}}" placeholder="Número de documento">
+                </div>
+            </div>
+
+            <!-- CUIL -->
+            <div class="mb-3">
+                <label for="cuil" class="form-label">CUIL</label>
+                <input name="cuil" type="text" class="form-control" id="cuil" value="{{tecnico.cuil}}" placeholder="CUIL del técnico">
+            </div>
+
+            <!-- Preferencia de Contacto y Medios de Contacto -->
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <label for="preferenciaContacto" class="form-label">Preferencia de Contacto</label>
+                    <select name="preferenciaContacto" id="preferenciaContacto" class="form-select">
+                        {{#each preferenciaContacto}}
+                            <option value="{{this}}" {{eq ../tecnico.preferenciaContacto.name this}}>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="mediosDeContacto" class="form-label">Medio de Contacto</label>
+                    <input name="mediosDeContacto" type="text" class="form-control" id="mediosDeContacto" value="{{medioDeContacto}}" placeholder="Ej. teléfono, email">
+                </div>
+            </div>
+
+            <!-- Dirección -->
+            <fieldset class="border p-3 mb-3">
+                <legend class="w-auto px-2 fs-6 text-uppercase fw-bold">Dirección Nueva</legend>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="calle" class="form-label">Calle</label>
+                        <input name="calle" type="text" class="form-control" id="calle" placeholder="Calle Falsa">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="numeroCalle" class="form-label">Número</label>
+                        <input name="numeroCalle" type="text" class="form-control" id="numeroCalle" placeholder="123">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="codigoPostal" class="form-label">CP</label>
+                        <input name="cp" type="number" class="form-control" id="codigoPostal" placeholder="1407">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="localidad" class="form-label">Localidad</label>
+                        <input name="localidad" type="text" class="form-control" id="localidad" placeholder="CABA">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="provincia" class="form-label">Provincia</label>
+                        <input name="provincia" type="text" class="form-control" id="provincia" placeholder="Buenos Aires">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Radio de Cobertura -->
+            <div class="mb-3">
+                <label for="radioCobertura" class="form-label">Radio de Cobertura (en Km)</label>
+                <input name="radioCoberturaEnKm" type="number" class="form-control" id="radioCobertura" value="{{tecnico.areaDeCobertura.radioCoberturaEnKm}}" placeholder="Radio de cobertura en kilómetros">
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="d-flex justify-content-between">
+                <a href="/admin/adminTecnicos" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-success">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+{{/partial}}
+
+{{> templates/index}}

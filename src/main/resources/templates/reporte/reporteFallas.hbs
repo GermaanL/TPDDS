@@ -1,0 +1,40 @@
+{{#partial "contenido"}}
+    <section class="container form-container form">
+
+        <h2>Reporte de Incidente</h2>
+        <form method="POST" action="/reporteFallas/guardarFalla" enctype="multipart/form-data">
+            <!-- Heladera -->
+            <div class="mb-3">
+                <label for="heladera" class="form-label">Heladera</label>
+                <select name="heladeraId" class="form-select" id="heladera" required>
+                    <option value="" selected disabled>Seleccione la heladera...</option>
+                    {{#each heladeras}}
+                        <option value="{{this.id}}">{{this.nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <!-- Fecha y hora del incidente -->
+            <div class="mb-3">
+                <label for="fecha-hora" class="form-label">Fecha y Hora del Incidente</label>
+                <input name="fechaAlta" type="datetime-local" class="form-control" id="fecha-hora" required>
+            </div>
+
+            <div class="mb-3" id="descripcion-group" >
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea name="descripcion" class="form-control" id="descripcion" rows="3"></textarea>
+            </div>
+
+            <!-- Foto (si el incidente es una falla técnica) -->
+            <div class="mb-3">
+                <label for="inputFoto" class="form-label">Foto</label>
+                <input name="imagen" type="file" class="form-control" id="inputFoto" accept="image/*">
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="btn btn-custom">Reportar Incidente</button>
+        </form>
+
+    </section>
+{{/partial}}
+{{> templates/index }}

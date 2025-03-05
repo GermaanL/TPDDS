@@ -1,0 +1,26 @@
+{{#partial "contenido"}}
+    <section class="container form-container">
+        <h3 class="my-4 text-center">INICIAR SESION</h3>
+        <form method="POST" action="/login" class="m-auto form">
+            <div class="mb-3 campo">
+                <label for="exampleFormControlInput1" class="form-label">Nombre de usuario</label>
+                <input name="username" class="form-control" id="exampleFormControlInput1" placeholder="username">
+            </div>
+            <div class="mb-3 campo">
+                <label for="inputPassword5" class="form-label">Contraseña</label>
+                <input name="contrasenia" type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-custom">Iniciar Sesión</button>
+            </div>
+        </form>
+        <div class="actions mx-auto">
+            <div class="d-flex flex-column flex-md-row justify-content-around text-center mt-3 ">
+                <a class="" href="olvide.html">Olvidé mi Contraseña</a>
+                <a class="" href="/registro">Registrarse</a>
+            </div>
+        </div>
+    </section>
+{{/partial}}
+{{> templates/index}}

@@ -1,0 +1,16 @@
+{{#partial "contenido"}}
+    <section class="container w-75 my-5">
+        <h1>Respuesta del JSON</h1>
+        <ul class="list-group list-group-flush overflow-auto">
+            <li class="list-group-item">
+
+            {{#each respuestas}}
+                <p>Nombres: {{nombres}}</p>
+                <p>Cantidad de personas: {{cantidadDePersonas}}</p>
+                <p>Localidad: {{localidad}}</p>
+            {{/each}}
+            </li>
+        </ul>
+    </section>
+{{/partial}}
+{{> templates/index}}

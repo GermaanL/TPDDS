@@ -1,0 +1,345 @@
+{{#partial "contenido"}}
+    <div class="container my-5 text-center">
+        <a href="/admin" class="btn btn-custom btn-lg">
+            Volver a Admin
+        </a>
+    </div>
+
+    <section class="container w-75 mb-5">
+
+        <div class="container my-5">
+
+            <!-- Formulario Regitro Persona Juridica -->
+            <div class="mb-5">
+
+                <!-- campos del formulario con boton para modificar y eliminar -->
+
+                <h4 class="h4 mb-4 text-center">Formulario Persona Juridica</h4>
+
+                <!-- Tabla de campos -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover text-center align-middle">
+                        <thead class="table-light">
+                        <tr>
+                            <th scope="col">Campo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Razón Social -->
+                        <tr>
+                            <td>Razón Social</td>
+                            <td>Texto</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Tipo de Contribución -->
+                        <tr>
+                            <td>Tipo de Contribución</td>
+                            <td>Selección</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Rubro -->
+                        <tr>
+                            <td>Rubro</td>
+                            <td>Texto</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Email -->
+                        <tr>
+                            <td>Email</td>
+                            <td>Texto</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Contraseña -->
+                        <tr>
+                            <td>Contraseña</td>
+                            <td>Contraseña</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Calle -->
+                        <tr>
+                            <td>Calle</td>
+                            <td>Texto</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Número -->
+                        <tr>
+                            <td>Número</td>
+                            <td>Texto</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Localidad -->
+                        <tr>
+                            <td>Localidad</td>
+                            <td>Texto</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+
+                        <!-- Tipo de Contribución -->
+                        <tr>
+                            <td>Tipo de Contribución</td>
+                            <td>Selección</td>
+                            <td>
+                                <button class="btn p-0 me-2" title="Modificar">
+                                    <img src="src/img/modificar.png" alt="Modificar" width="24">
+                                </button>
+                                <button class="btn p-0" title="Eliminar">
+                                    <img src="src/img/eliminar.png" alt="Eliminar" width="24">
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="col-md-6 my-4 text-center mx-auto">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#suscripcionHeladeraModal">
+                        Agregar un campo
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="suscripcionHeladeraModal" tabindex="-1" aria-labelledby="suscripcionHeladeraModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="suscripcionHeladeraModalLabel">Nuevo Campo:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="">
+                                        <!-- Nombre del Campo -->
+                                        <div class="mb-3">
+                                            <label for="inputNombreCampo" class="form-label">Nombre del Campo</label>
+                                            <input type="text" class="form-control" id="inputNombreCampo" placeholder="Ingrese el nombre del campo" required>
+                                        </div>
+
+                                        <!-- Tipo del Campo -->
+                                        <div class="mb-3">
+                                            <label for="inputTipoCampo" class="form-label">Tipo de Campo</label>
+                                            <select id="inputTipoCampo" class="form-select" required>
+                                                <option value="" disabled selected>Seleccione el tipo de campo</option>
+                                                <option value="text">Texto</option>
+                                                <option value="password">Contraseña</option>
+                                                <option value="date">Fecha</option>
+                                                <option value="select">Selección</option>
+                                                <option value="checkbox">Checkbox</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Campo Obligatorio -->
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="inputObligatorio">
+                                            <label class="form-check-label" for="inputObligatorio">
+                                                Obligatorio
+                                            </label>
+                                        </div>
+
+                                        <!-- Botón para enviar el formulario -->
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-custom">Agregar Campo</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario Regitro Persona No Juridica -->
+            <div class="mb-5">
+
+                <h4 class="h4 mb-4 text-center">Formulario Persona No Juridica</h4>
+
+
+                <div class="col-md-6 my-4 text-center mx-auto">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#suscripcionHeladeraModal">
+                        Agregar un campo
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="suscripcionHeladeraModal" tabindex="-1" aria-labelledby="suscripcionHeladeraModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="suscripcionHeladeraModalLabel">Nuevo Campo:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="">
+                                        <!-- Nombre del Campo -->
+                                        <div class="mb-3">
+                                            <label for="inputNombreCampo" class="form-label">Nombre del Campo</label>
+                                            <input type="text" class="form-control" id="inputNombreCampo" placeholder="Ingrese el nombre del campo" required>
+                                        </div>
+
+                                        <!-- Tipo del Campo -->
+                                        <div class="mb-3">
+                                            <label for="inputTipoCampo" class="form-label">Tipo de Campo</label>
+                                            <select id="inputTipoCampo" class="form-select" required>
+                                                <option value="" disabled selected>Seleccione el tipo de campo</option>
+                                                <option value="text">Texto</option>
+                                                <option value="password">Contraseña</option>
+                                                <option value="date">Fecha</option>
+                                                <option value="select">Selección</option>
+                                                <option value="checkbox">Checkbox</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Campo Obligatorio -->
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="inputObligatorio">
+                                            <label class="form-check-label" for="inputObligatorio">
+                                                Obligatorio
+                                            </label>
+                                        </div>
+
+                                        <!-- Botón para enviar el formulario -->
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-custom">Agregar Campo</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario Regitro Persona Vulnerable -->
+            <div class="mb-5">
+                <h4 class="h4 mb-4 text-center">Formulario Persona Vulnerable</h4>
+
+
+                <div class="col-md-6 my-4 text-center mx-auto">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#suscripcionHeladeraModal">
+                        Agregar un campo
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="suscripcionHeladeraModal" tabindex="-1" aria-labelledby="suscripcionHeladeraModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="suscripcionHeladeraModalLabel">Nuevo Campo:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="">
+                                        <!-- Nombre del Campo -->
+                                        <div class="mb-3">
+                                            <label for="inputNombreCampo" class="form-label">Nombre del Campo</label>
+                                            <input type="text" class="form-control" id="inputNombreCampo" placeholder="Ingrese el nombre del campo" required>
+                                        </div>
+
+                                        <!-- Tipo del Campo -->
+                                        <div class="mb-3">
+                                            <label for="inputTipoCampo" class="form-label">Tipo de Campo</label>
+                                            <select id="inputTipoCampo" class="form-select" required>
+                                                <option value="" disabled selected>Seleccione el tipo de campo</option>
+                                                <option value="text">Texto</option>
+                                                <option value="password">Contraseña</option>
+                                                <option value="date">Fecha</option>
+                                                <option value="select">Selección</option>
+                                                <option value="checkbox">Checkbox</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Campo Obligatorio -->
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="checkbox" id="inputObligatorio">
+                                            <label class="form-check-label" for="inputObligatorio">
+                                                Obligatorio
+                                            </label>
+                                        </div>
+
+                                        <!-- Botón para enviar el formulario -->
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-custom">Agregar Campo</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{{/partial}}
+{{> templates/index}}

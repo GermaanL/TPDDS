@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <title>Registro</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary-40 navbar-custom-border">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="src/img/Logo.png" alt="Logo" width="100" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase text-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Heladeras
+                        </a>
+                        <ul class="dropdown-menu text-end" aria-labelledby="navbarScrollingDropdown">
+                          <li><a class="dropdown-item" href="colaborarPersonaJuridica.html">Donar Heladera</a></li>
+                          <li><a class="dropdown-item" href="Heladeras.html">Subscribirse a Heladera</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="reporteFallas.html">Reportar Falla</a></li>
+                        </ul>
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="colaborar.html">Colaborar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container text-center">
+        <h2 class="my-4 ">COLABORAR</h2>
+        <p class="w-75 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptas veniam eum error voluptatibus nihil iure iusto fugit, adipisci quasi explicabo praesentium, eligendi officia? Nesciunt vero ex fuga distinctio explicabo.</p>
+    </section>
+    
+    <section class="container col col-md-6 mx-auto">
+
+        <div class="container mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg width="150" height="150" viewBox="0 0 150 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_72_192)">
+                            <path d="M18.75 75.5C18.75 82.8869 20.2049 90.2014 23.0318 97.0259C25.8586 103.851 30.0019 110.051 35.2252 115.275C40.4485 120.498 46.6495 124.641 53.4741 127.468C60.2986 130.295 67.6131 131.75 75 131.75C82.3869 131.75 89.7014 130.295 96.5259 127.468C103.351 124.641 109.551 120.498 114.775 115.275C119.998 110.051 124.141 103.851 126.968 97.0259C129.795 90.2014 131.25 82.8869 131.25 75.5C131.25 68.1131 129.795 60.7986 126.968 53.9741C124.141 47.1495 119.998 40.9485 114.775 35.7252C109.551 30.5019 103.351 26.3586 96.5259 23.5318C89.7014 20.7049 82.3869 19.25 75 19.25C67.6131 19.25 60.2986 20.7049 53.4741 23.5318C46.6495 26.3586 40.4485 30.5019 35.2252 35.7252C30.0019 40.9485 25.8586 47.1495 23.0318 53.9741C20.2049 60.7986 18.75 68.1131 18.75 75.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M92.5 56.75C91.3678 54.786 89.7228 53.1669 87.7411 52.066C85.7595 50.965 83.5157 50.4237 81.25 50.5H68.75C65.4348 50.5 62.2554 51.817 59.9112 54.1612C57.567 56.5054 56.25 59.6848 56.25 63C56.25 66.3152 57.567 69.4946 59.9112 71.8388C62.2554 74.183 65.4348 75.5 68.75 75.5H81.25C84.5652 75.5 87.7446 76.817 90.0888 79.1612C92.433 81.5054 93.75 84.6848 93.75 88C93.75 91.3152 92.433 94.4946 90.0888 96.8388C87.7446 99.183 84.5652 100.5 81.25 100.5H68.75C66.4843 100.576 64.2405 100.035 62.2589 98.934C60.2772 97.8331 58.6322 96.214 57.5 94.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M75 44.25V106.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_72_192">
+                                <rect width="150" height="150" fill="white" transform="translate(0 0.5)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>                    
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#dineroModal">
+                        Donar Dinero
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="dineroModal" tabindex="-1" aria-labelledby="dineroModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Donacion de dinero</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="inputCantidad" class="form-label">Cantidad</label>
+                                            <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad a donar">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="inputPeriodica" class="form-label">Donacion Periodica</label>
+                                            <select id="inputPeriodica" class="form-select">
+                                                <option selected>Seleccionar...</option>
+                                                <option value="1">No</option>
+                                                <option value="2">Semanal</option>
+                                                <option value="3">Mensual</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Confirmar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg width="150" height="151" viewBox="0 0 150 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_74_490)">
+                        <path d="M28.2438 125.55L131.25 125.5V103.625C127.935 103.625 124.755 102.308 122.411 99.9638C120.067 97.6196 118.75 94.4402 118.75 91.125C118.75 87.8098 120.067 84.6304 122.411 82.2862C124.755 79.942 127.935 78.625 131.25 78.625V56.75H26.7375" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M131.25 56.75L72.5937 25.55C56.8937 26.3 42.8563 34.425 33.05 46.9563C24.1563 58.3313 18.75 73.3375 18.75 89.7937C18.75 103.025 22.25 115.325 28.2438 125.55" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M93.75 81.75V81.8125" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M50 81.75V81.8125" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M68.75 100.5V100.563" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_74_490">
+                        <rect width="150" height="150" fill="white" transform="translate(0 0.5)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                        
+                                           
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#viandaModal">
+                        Donar Vianda
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="viandaModal" tabindex="-1" aria-labelledby="viandaModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="viandaModalLabel">Donacion de vianda</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="inputComida" class="form-label">Comida</label>
+                                            <input type="text" class="form-control" id="inputComida" placeholder="Nombre de la comida">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="inputVencimiento" class="form-label">Vencimiento</label>
+                                            <input type="date" class="form-control" id="inputVencimiento">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="heladerasSelect" class="form-label">Heladeras Disponibles</label>
+                                            <select id="heladerasSelect" class="form-select">
+                                                <option selected disabled>Seleccionar...</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="inputCalorias" class="form-label">Calorías</label>
+                                                <input type="number" class="form-control" id="inputCalorias" placeholder="Calorías">
+                                            </div>
+                                            <div class="col">
+                                                <label for="inputPeso" class="form-label">Peso</label>
+                                                <input type="number" class="form-control" id="inputPeso" placeholder="Peso en kg">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between mt-4">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Confirmar</button>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg width="150" height="151" viewBox="0 0 150 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_74_627)">
+                        <path d="M31.25 106.75C31.25 110.065 32.567 113.245 34.9112 115.589C37.2554 117.933 40.4348 119.25 43.75 119.25C47.0652 119.25 50.2446 117.933 52.5888 115.589C54.933 113.245 56.25 110.065 56.25 106.75C56.25 103.435 54.933 100.255 52.5888 97.9112C50.2446 95.567 47.0652 94.25 43.75 94.25C40.4348 94.25 37.2554 95.567 34.9112 97.9112C32.567 100.255 31.25 103.435 31.25 106.75Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M93.75 106.75C93.75 110.065 95.067 113.245 97.4112 115.589C99.7554 117.933 102.935 119.25 106.25 119.25C109.565 119.25 112.745 117.933 115.089 115.589C117.433 113.245 118.75 110.065 118.75 106.75C118.75 103.435 117.433 100.255 115.089 97.9112C112.745 95.567 109.565 94.25 106.25 94.25C102.935 94.25 99.7554 95.567 97.4112 97.9112C95.067 100.255 93.75 103.435 93.75 106.75Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M31.25 106.75H18.75V38C18.75 36.3424 19.4085 34.7527 20.5806 33.5806C21.7527 32.4085 23.3424 31.75 25 31.75H81.25V106.75M56.25 106.75H93.75M118.75 106.75H131.25V69.25M131.25 69.25H81.25M131.25 69.25L112.5 38H81.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_74_627">
+                        <rect width="150" height="150" fill="white" transform="translate(0 0.5)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                                           
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#distribuirModal">
+                        Distribuir Vianda
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="distribuirModal" tabindex="-1" aria-labelledby="distribuirModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="distribuirModalLabel">Distribucion de Vianda</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="inputHeladeraOrigen" class="form-label">Heladera Origen</label>
+                                            <select class="form-select" id="inputHeladeraOrigen">
+                                                <option value="" selected disabled>Seleccionar...</option>
+                                            </select>
+                                        </div>
+                                    
+                                        <div class="mb-3">
+                                            <label for="inputHeladeraDestino" class="form-label">Heladera Destino</label>
+                                            <select class="form-select" id="inputHeladeraDestino">
+                                                <option value="" selected disabled>Seleccionar...</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="inputFecha" class="form-label">Fecha</label>
+                                                <input type="date" class="form-control" id="inputFecha">
+                                            </div>
+                                            <div class="col">
+                                                <label for="inputCantidad" class="form-label">Cantidad</label>
+                                                <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3 mt-3">
+                                            <label for="inputMotivo" class="form-label">Motivo de Distribución</label>
+                                            <select class="form-select" id="inputMotivo">
+                                                <option value="Motivo1">Motivo1</option>
+                                                <option value="Motivo2">Motivo2</option>
+                                                <!-- Agrega más opciones según sea necesario -->
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between mt-4">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Confirmar</button>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="150" height="150" viewBox="0 0 24 24" stroke-width="0.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                        <path d="M16 19h6" />
+                        <path d="M19 16v6" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+                      </svg>
+                                           
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#registrarModal">
+                        Registrar Persona Vulnerable
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="registrarModal" tabindex="-1" aria-labelledby="registrarModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="registrarModalLabel">Registrar Persona Vulnerable</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form class="m-auto">
+                                        <!-- Nombre -->
+                                        <div class="mb-3">
+                                            <label for="inputNombre" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="inputNombre" placeholder="Jhon">
+                                        </div>
+                                    
+                                        <!-- Apellido -->
+                                        <div class="mb-3">
+                                            <label for="inputApellido" class="form-label">Apellido</label>
+                                            <input type="text" class="form-control" id="inputApellido" placeholder="Doe">
+                                        </div>
+                            
+                                        <!-- Fecha de Nacimiento y Situacion de Calle -->
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                                <input type="date" class="form-control" id="inputFechaNacimiento">
+                                            </div>
+                                            <div class="col-md-6 d-flex align-items-end justify-content-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                                    <label class="form-check-label ms-2" for="inlineFormCheck">Situación de Calle</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <!-- Dirección: Calle, Número, Localidad -->
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label for="inputCalle" class="form-label">Calle</label>
+                                                <input type="text" class="form-control" id="inputCalle" placeholder="Calle Falsa">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="inputNumero" class="form-label">Número</label>
+                                                <input type="text" class="form-control" id="inputNumero" placeholder="123">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="inputLocalidad" class="form-label">Localidad</label>
+                                                <input type="text" class="form-control" id="inputLocalidad" placeholder="CABA">
+                                            </div>
+                                        </div>
+                            
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label for="inputContribucion" class="form-label">Tipo de Documento</label>
+                                                <select id="inputContribucion" class="form-select">
+                                                    <option selected>Seleccionar...</option>
+                                                    <option value="1">DNI</option>
+                                                    <option value="2">ETC</option>
+                                                </select>
+                                            </div>
+                            
+                                            <div class="col-md-6">
+                                                <label for="inputDoc" class="form-label">N° Documento</label>
+                                                <input type="text" class="form-control" id="inputNombre" placeholder="12345678">
+                                            </div>
+                                            
+                                        </div>
+                                            
+                                        <!-- Botón de Enviar -->
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-custom">Registrar</button>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    
+
+
+
+    <section class="container mb-5">
+        <div class="w-75 w-lg-50 mx-auto">
+            <h3 class="h3 my-4 text-center">Mis Colaboraciones</h3>
+            <ul class="list-group list-group-flush overflow-auto" style="max-height: 150px;">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+                <!-- Agrega más ítems aquí si es necesario -->
+            </ul>
+        </div>
+        <div class="w-100 w-lg-50 text-center mx-auto">
+            <p class="mt-3 mb-5 text-center">Puntos Acumulados:<span class="">NUMERO</span></p>
+            <a href="productos.html" class="btn btn-custom">Canjear mis Puntos</a>
+        </div>
+    </section>
+    
+    
+
+    <!-- Footer -->
+    <footer class="bg-primary-40 text-center text-dark py-4 footer-custom-border">
+        <div class="container">
+            <ul class="navbar-nav ms-auto d-inline-block">
+                <li class="nav-item d-inline">
+                    <a class="nav-link d-inline" href="index.html">
+                        <img src="src/img/Logo.png" alt="Logo" width="30" height="30">
+                    </a>
+                    <span class="mx-2">|</span>
+                </li>
+                <li class="nav-item d-inline">
+                    <a class="nav-link d-inline" href="Heladeras.html">Heladeras</a>
+                    <span class="mx-2">|</span>
+                </li>
+                <li class="nav-item d-inline">
+                    <a class="nav-link d-inline" href="colaborar.html">Colaborar</a>
+                    <span class="mx-2">|</span>
+                </li>
+                <li class="nav-item d-inline">
+                    <a class="nav-link d-inline" href="login.html">Iniciar Sesión</a>
+                </li>
+            </ul>
+        </div>
+        <p>Tel: 11-2345-6789 | Email: ong@gmail.com</p>
+    </footer>
+    
+
+    <!-- Bootstrap 5 JS and dependencies -->
+    <script type="module" src="src/js/formularios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

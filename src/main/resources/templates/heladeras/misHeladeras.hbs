@@ -1,0 +1,140 @@
+{{#partial "contenido"}}
+<section class="container w-75 mb-5">
+    <div class="container my-5">
+        <!-- Primera Heladera -->
+
+        {{#each heladerasUsuario}}
+            <div class="mb-5">
+                <h4 class="h4">{{this.nombre}}</h4>
+                <div class="d-flex align-items-center mb-2">
+                    <!-- Indicador de estado -->
+                    {{#if this.estaActiva}}
+                        <span class="estado-heladera me-2" style="background-color: green;"></span>
+                        <strong>Activa</strong>
+                    {{else}}
+                        <span class="estado-heladera me-2" style="background-color: red;"></span>
+                        <strong>Deshabilitada</strong>
+                    {{/if}}
+                </div>
+                <!-- Alerta si cumple con las preferencias -->
+                {{#each alertasHeladera}}
+                    <div class="alert alert-warning mt-3">
+                        <strong>Alerta:</strong> {{this.tipoIncidente}}
+                    </div>
+                {{/each}}
+            </div>
+        {{/each}}
+    </div>
+    <div class="container my-5">
+        <h5 class="h5 mt-3">Preferencias de Notificación</h5>
+        <ul class="list">
+            {{#each suscripciones}}
+                {{#isType this "Desperfecto"}}
+                    <li class="small">Notificarme cuando haya un Desperfecto en <span>"{{heladera.nombre}}"</span></li>
+                {{/isType}}
+                {{#isType this "MuchoStock"}}
+                    <li class="small">Notificar cuando falten <span>{{viandas_mucho_stock}}</span> viandas para llenar la heladera <span>"{{heladera.nombre}}"</span></li>
+                {{/isType}}
+                {{#isType this "PocoStock"}}
+                    <li class="small">Notificar cuando queden <span>{{viandas_poco_stock}}</span> viandas en la heladera <span>"{{heladera.nombre}}"</span></li>
+                {{/isType}}
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-md-6 my-4 text-center mx-auto">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#suscripcionHeladeraModal">
+            Suscribirse a una Heladera
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade custom-fade" id="suscripcionHeladeraModal" tabindex="-1" aria-labelledby="suscripcionHeladeraModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="suscripcionHeladeraModalLabel">Suscribirse a una Heladera</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form method="POST" action="/heladeras/suscripcion">
+                            <div class="mb-4">
+                                <label for="inputHeladera" class="form-label">Heladera</label>
+                                <select name="heladeraId" class="form-select" id="inputHeladera">
+                                    {{#each heladeras}}
+                                        <option value="{{this.id}}">{{this.nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Notificaciones</label>
+
+                                <div class="border p-3 rounded mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="form-check form-switch me-3">
+                                            <input name="checkCantViandasDisponibles" class="form-check-input" type="checkbox" role="switch" id="notificacion1">
+                                            <label class="form-check-label" for="notificacion1">
+                                                Notificar cuando queden únicamente n viandas disponibles.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <label for="viandasDisponibles" class="form-label me-2">Cantidad</label>
+                                        <input name="cantViandasDisponibles" type="number" class="form-control flex-grow-1" id="viandasDisponibles" placeholder="N°">
+                                    </div>
+                                </div>
+
+                                <div class="border p-3 rounded mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="form-check form-switch me-3">
+                                            <input name="checkCantViandasFaltantes" class="form-check-input" type="checkbox" role="switch" id="notificacion2">
+                                            <label class="form-check-label" for="notificacion2">
+                                                Notificar cuando falten n viandas para llenar la heladera.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <label for="viandasFaltantes" class="form-label me-2">Cantidad</label>
+                                        <input name="CantViandasFaltantes" type="number" class="form-control flex-grow-1" id="viandasFaltantes" placeholder="N°">
+                                    </div>
+                                </div>
+
+                                <div class="border p-3 rounded">
+                                    <div class="form-check form-switch">
+                                        <input name="checkDesperfecto" class="form-check-input" type="checkbox" role="switch" id="notificacion3">
+                                        <label class="form-check-label" for="notificacion3">
+                                            Notificar en caso de desperfecto de la heladera.
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tipoNotificacion" class="form-label">Tipo de Notificación</label>
+                                <select name="medioDeContacto" id="tipoNotificacion" class="form-select">
+                                    {{#each mediosDeContacto}}
+                                        <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+
+
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-cancel-custom me-2" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-custom">Suscribirse</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{{/partial}}
+{{> templates/index }}

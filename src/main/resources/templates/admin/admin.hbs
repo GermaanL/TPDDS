@@ -1,0 +1,350 @@
+{{#partial "contenido"}}
+<!-- Sección "Nuestras Heladeras" -->
+<section class="my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mb-4 mb-lg-0"> <!-- Margen inferior en pantallas grandes y menores -->
+                <div id="map" class="rounded-5" style="background-color: #e9ecef;"></div>
+            </div>
+
+            <div class="col-lg-4"> <!-- Columna para pantallas grandes y mayores -->
+                <div class="card h-100 rounded-5" style="max-height: 500px;">
+                    <h3 class="h3 my-4 text-center">Heladeras</h3>
+                    <ul id="heladeraList" class="list-group list-group-flush overflow-auto">
+                        {{#each heladeras}}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{this.nombre}}
+                                <div class="btn-group btn-group-sm">
+                                    <!-- Botón de modificar -->
+                                    <button class="btn btn-link" title="Modificar" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#modifyModal">
+                                        <img src="/img/modificar.png" alt="Modificar" width="20">
+                                    </button>
+                                    <!-- Botón de eliminar -->
+                                    <button class="btn btn-link" title="Eliminar" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <img src="/img/eliminar.png" alt="Eliminar" width="20">
+                                    </button>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal para Modificar -->
+<div class="modal fade" id="modifyModal" tabindex="-1" aria-labelledby="modifyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modifyModalLabel">Modificar Heladera</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modifyForm" >
+                    <div class="mb-3">
+                        <label for="nameInput" class="form-label">Nombre</label>
+                        <input name="nombre" type="text" class="form-control" id="nameInput" required>
+                    </div>
+                    <input type="hidden" id="itemIndex">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-custom">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Eliminar -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Eliminar Heladera</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar esta Heladera?</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete" >Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<section class="container my-5 text-center">
+    <a href="/adminFormularios" class="btn btn-custom btn-lg">
+        Formularios de Registro
+    </a>
+</section>
+-->
+
+<section class="my-4">
+    <div class="container w-75 mb-5">
+        <h3 class="h3 my-4 text-center">Coeficientes para Cálculo de Puntos</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Tipo de Coeficiente</th>
+                <th>Valor</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Pesos Donados</td>
+                <td>{{coeficientes.coeficientePesosDonados}}</td>
+            </tr>
+            <tr>
+                <td>Viandas Distribuidas</td>
+                <td>{{coeficientes.coeficienteViandasDistribuidas}}</td>
+            </tr>
+            <tr>
+                <td>Viandas Donadas</td>
+                <td>{{coeficientes.coeficienteViandasDonadas}}</td>
+            </tr>
+            <tr>
+                <td>Tarjetas Repartidas</td>
+                <td>{{coeficientes.coeficienteTarjetasRepartidas}}</td>
+            </tr>
+            <tr>
+                <td>Heladeras Activas</td>
+                <td>{{coeficientes.coeficienteHeladerasActivas}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-custom w-75 mb-3" data-bs-toggle="modal" data-bs-target="#coeficientesModal">
+                Modificar Coeficientes
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modal para modificar coeficientes -->
+<div class="modal fade" id="coeficientesModal" tabindex="-1" aria-labelledby="coeficientesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="coeficientesModalLabel">Modificar Coeficientes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form method="POST" action="/coeficientes/modificar">
+                    <div class="mb-3">
+                        <label for="coeficientePesosDonados" class="form-label">Coeficiente Pesos Donados</label>
+                        <input name="coeficientePesosDonados" type="number" step="0.01" class="form-control" id="coeficientePesosDonados" value="{{coeficientes.coeficientePesosDonados}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="coeficienteViandasDistribuidas" class="form-label">Coeficiente Viandas Distribuidas</label>
+                        <input name="coeficienteViandasDistribuidas" type="number" step="0.01" class="form-control" id="coeficienteViandasDistribuidas" value="{{coeficientes.coeficienteViandasDistribuidas}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="coeficienteViandasDonadas" class="form-label">Coeficiente Viandas Donadas</label>
+                        <input name="coeficienteViandasDonadas" type="number" step="0.01" class="form-control" id="coeficienteViandasDonadas" value="{{coeficientes.coeficienteViandasDonadas}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="coeficienteTarjetasRepartidas" class="form-label">Coeficiente Tarjetas Repartidas</label>
+                        <input name="coeficienteTarjetasRepartidas" type="number" step="0.01" class="form-control" id="coeficienteTarjetasRepartidas" value="{{coeficientes.coeficienteTarjetasRepartidas}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="coeficienteHeladerasActivas" class="form-label">Coeficiente Heladeras Activas</label>
+                        <input name="coeficienteHeladerasActivas" type="number" step="0.01" class="form-control" id="coeficienteHeladerasActivas" value="{{coeficientes.coeficienteHeladerasActivas}}">
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Modificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="container w-75 mb-5">
+    <h3 class="h3 my-4 text-center">Colaboradores</h3>
+    <ul class="list-group list-group-flush overflow-auto" style="max-height: 150px;">
+        {{#each colaboradores}}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <!-- Mostrar username y puntosTotales del colaborador -->
+                <div>
+                    <strong>Username:</strong> {{this.usuario.username}} <br>
+                    <strong>Puntos Totales:</strong> {{this.puntosTotales}}
+                </div>
+
+                <!-- Botones Modificar y Eliminar -->
+                <div>
+                    <button class="btn btn-sm modificar-colaborador" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#modificarColaboradorModal">
+                        <img src="/img/modificar.png" alt="Modificar" width="20">
+                    </button>
+                    <button class="btn btn-sm eliminar-colaborador" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#eliminarColaboradorModal">
+                        <img src="/img/eliminar.png" alt="Eliminar" width="20">
+                    </button>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</section>
+
+<section class="container w-75 mb-5">
+    <h3 class="h3 my-4 text-center">Tarjetas por despachar</h3>
+    <ul id="tarjetasAsignadas" class="list-group list-group-flush overflow-auto" style="max-height: 150px;">
+        {{#each colaboradoresConTarjetasAsignadas}}
+            <li id="itemTarjeta{{this.tarjeta.id}}" class="list-group-item d-flex justify-content-between align-items-center">
+                <!-- Mostrar username y puntosTotales del colaborador -->
+                <div>
+                    <strong>Codigo:</strong> {{this.tarjeta.codigoIdentificador}} <strong>User dest.:</strong> {{this.usuario.username}}<br>
+                    <strong>Calle:</strong> {{this.direccion.calle}}
+                    <strong>Altura:</strong> {{this.direccion.altura}}
+                    <strong>Cod. Postal:</strong> {{this.direccion.codigoPostal}} <br>
+                </div>
+
+                <!-- Botones Modificar y Eliminar -->
+                <div>
+                    <button id="btnDespacharTarjeta" class="btn btn-sm modificar-colaborador" data-id="{{this.tarjeta.id}}" data-bs-toggle="modal" data-bs-target="#modificarColaboradorModal">
+                        Despachar
+                    </button>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</section>
+
+<section class="container my-5 text-center">
+    <a href="/admin/adminTecnicos" class="btn btn-custom btn-lg">
+        Administrar Tecnicos
+    </a>
+</section>
+
+<section class="container my-5 text-center">
+    <a href="/admin/servicioIntegrado" class="btn btn-custom btn-lg">
+        Visualizar servicio integrado
+    </a>
+</section>
+
+<section class="container mt-5">
+    <div class="row">
+        <!-- Sección de Subida de Archivo CSV -->
+        <div class="col-md-6 mb-4">
+            <div class="card border rounded p-4">
+                <h3 class="h3 text-center mb-4">Carga de Colaboradores a partir de CSV</h3>
+                <form id="uploadForm" action="/admin/upload-csv" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="csvFile" class="form-label">Selecciona un archivo CSV</label>
+                        <input type="file" class="form-control" id="csvFile" name="csvFile" accept=".csv" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom w-100">Subir</button>
+                </form>
+                <div id="uploadStatus" class="alert d-none mt-3" role="alert"></div>
+            </div>
+        </div>
+
+        <!-- Sección de Descarga de Reporte Semanal -->
+        <div class="col-md-6 mb-4">
+            <div class="card border rounded p-4">
+                <h3 class="h3 text-center mb-4">Descargar Reporte Semanal</h3>
+                <div id="reportStatus" class="alert alert-info text-center" role="alert">
+                    El reporte semanal más reciente está disponible para su descarga.
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/admin/download-latest-report" class="btn btn-success w-100">Descargar Reporte</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{/partial}}
+{{#partial "scripts"}}
+    <script src="/js/scriptAdmin.js"></script>
+    <script src="/js/mapa.js"></script>
+    <script>
+    {{# each heladeras }}
+        agregarMarcador("{{this.nombre}}", {{this.ubicadaEn.puntoGeografico.latitud}}, {{this.ubicadaEn.puntoGeografico.longitud}}, "{{this.ubicadaEn.direccion.calle}} {{this.ubicadaEn.direccion.altura}}");
+    {{/each}}
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const confirmDeleteButton = document.getElementById('confirmDelete');
+            let heladeraIdToDelete;
+
+            $('#deleteModal').on('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                heladeraIdToDelete = button.getAttribute('data-id');
+            });
+
+            confirmDeleteButton.addEventListener('click', function () {
+            console.log("ID a eliminar:", heladeraIdToDelete);
+            fetch(`/heladeras/${heladeraIdToDelete}`, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    console.error('Error al eliminar la heladera');
+                }
+            })
+            .catch(error => console.error('Error en la solicitud DELETE:', error));
+            });
+        });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    let heladeraIdToEdit;
+
+    $('#modifyModal').on('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        heladeraIdToEdit = button.getAttribute('data-id');
+
+        fetch(`/heladeras/${heladeraIdToEdit}`)
+            .then(response => response.json())
+            .then(heladera => {
+                document.getElementById('nameInput').value = heladera.nombre;
+            })
+            .catch(error => console.error('Error al obtener los datos de la heladera:', error));
+    });
+
+    document.getElementById('modifyForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const nuevoNombre = document.getElementById('nameInput').value;
+
+        fetch(`/heladeras/${heladeraIdToEdit}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                nombre: nuevoNombre
+            })
+        })
+        .then(response => {
+            window.location.reload();
+        })
+        .catch(error => console.error('Error en la solicitud PUT:', error));
+        });
+    });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const eliminarButtons = document.querySelectorAll(".eliminar");
+        console.log(eliminarButtons);
+        const eliminarInput = document.getElementById("eliminarTecnicoId");
+
+        eliminarButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                const tecnicoId = this.getAttribute("data-id");
+                console.log(tecnicoId);
+                eliminarInput.value = tecnicoId;
+            });
+        });
+    });
+    </script>
+{{/partial}}
+{{> templates/index}}

@@ -1,0 +1,114 @@
+{{#partial "contenido"}}
+<section class="container form-container">
+
+    <h3 class="my-4 text-center">REGISTRARSE</h3>
+
+    <form id="registroForm" class="m-auto form">
+        <!-- Nombre -->
+        <div class="mb-3">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input name="nombre" type="text" class="form-control" id="inputNombre" placeholder="Jhon">
+        </div>
+
+        <!-- Apellido -->
+        <div class="mb-3">
+            <label for="inputApellido" class="form-label">Apellido</label>
+            <input name="apellido" type="text" class="form-control" id="inputApellido" placeholder="Doe">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="inputEmail" placeholder="jhondoe@ejemplo.com">
+        </div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <label for="inputContribucion" class="form-label">Tipo de Documento</label>
+                <select name="tipoDocumento" id="inputContribucion" class="form-select">
+                    <option selected value="DNI">DNI</option>
+                    <option value="CUITCUIL">CUIT/CUIL</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputDoc" class="form-label">N° Documento</label>
+                <input name="documento" type="text" class="form-control" id="inputDoc" placeholder="12345678">
+            </div>
+
+        </div>
+
+        <!-- Dirección: Calle, Número, Localidad -->
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <label for="inputCalle" class="form-label">Calle</label>
+                <input name="calle" type="text" class="form-control" id="inputCalle" placeholder="Calle Falsa">
+            </div>
+            <div class="col-md-2">
+                <label for="inputNumero" class="form-label">Número</label>
+                <input name="numero" type="text" class="form-control" id="inputNumero" placeholder="123">
+            </div>
+            <div class="col-md-4">
+                <label for="inputLocalidad" class="form-label">Localidad</label>
+                <input name="localidad" type="text" class="form-control" id="inputLocalidad" placeholder="CABA">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="inputUsername" class="form-label">Username</label>
+            <input name="username" type="text" class="form-control" id="inputUsername" placeholder="tu_username">
+        </div>
+
+        <!-- Contraseña -->
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Contraseña</label>
+            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula, un número y un carácter especial.
+            </small>
+        </div>
+
+        <!-- Fecha de Nacimiento y Tipo de Contribución -->
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <input name="fechaNacimiento" type="date" class="form-control" id="inputFechaNacimiento">
+            </div>
+            <div class="col-md-6">
+                <label for="inputContribucion" class="form-label">Tipo de Contribución</label>
+                <div class="form-check-group border border-warning rounded p-3">
+                    {{#each contribuciones}}
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="contribucion-{{@index}}" name="formasSeleccionadas" value="{{nombre}}">
+                            <label class="form-check-label" for="contribucion-{{@index}}">{{nombre}}</label>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="text-end">
+            <button class="btn btn-custom">Registrarse</button>
+        </div>
+    </form>
+
+
+    <div class="actions mx-auto">
+        <div class="d-flex flex-column flex-md-row justify-content-around text-center mt-3">
+            <a href="olvide.html">Olvidé mi Contraseña</a>
+            <a href="/registroPersonaJuridica">Soy Persona Jurídica</a>
+        </div>
+        <div class="text-center mt-0 mt-md-3">
+            <a href="/login">Iniciar Sesión</a>
+        </div>
+    </div>
+
+</section>
+
+{{#partial "scripts"}}
+    <script type="module" src="/js/scriptRegistro.js"></script>
+{{/partial}}
+
+{{/partial}}
+{{> templates/index}}

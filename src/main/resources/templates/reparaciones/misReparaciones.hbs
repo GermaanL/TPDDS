@@ -1,0 +1,54 @@
+{{#partial "contenido"}} <section class="container">
+        <h1 class="my-4 text-center">Incidentes Asignados</h1>
+
+        <!-- Lista de reparaciones pendientes -->
+        <h2>Reparaciones</h2>
+        <ul class="list-group mb-4">
+            {{#if incidentesAsignados}}
+                {{#each incidentesAsignados}}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>Heladera:</strong> {{heladeraAfectada.nombre}}<br>
+                            <strong>Fecha Alta:</strong> {{fechaAlta}}<br>
+                            <strong>Tipo Incidente:</strong> {{tipoIncidente}}
+                        </div>
+
+                        <div>
+                            {{#if solucionado}}
+                                <span class="estado-heladera me-2" style="background-color: green;"></span>
+                                <strong>Solucionado</strong>
+                            {{else}}
+                                <span class="estado-heladera me-2" style="background-color: red;"></span>
+                                <strong>Pendiente</strong>
+                            {{/if}}
+                        </div>
+
+                        <a href="/reparaciones/falla/{{id}}" class="btn btn-custom">Ver Detalles</a>
+                    </li>
+
+                {{/each}}
+            {{else}}
+                <li class="list-group-item">No hay reparaciones pendientes.</li>
+            {{/if}}
+        </ul>
+
+        <!-- Lista de reparaciones realizadas -->
+        <h2>Reparaciones Realizadas</h2>
+        <ul class="list-group">
+            {{#if visitasRealizadas}}
+                {{#each visitasRealizadas}}
+                    <li class="list-group-item">
+                        <strong>Heladera:</strong> {{heladera.nombre}}<br>
+                        <strong>Fecha Visita:</strong> {{fechaVisita}}<br>
+                        <strong>Causa:</strong> {{causa.tipoIncidente}} - {{causa.descripcion}}<br>
+                        <strong>Observaciones: </strong> {{observaciones}}<br>
+                        <strong>Solucionado: </strong>{{#if incidenteSolucionado}}Si{{else}}No{{/if}}
+                    </li>
+                {{/each}}
+            {{else}}
+                <li class="list-group-item">No hay reparaciones realizadas.</li>
+            {{/if}}
+        </ul>
+    </section>
+{{/partial}}
+{{> templates/index}}

@@ -1,0 +1,6 @@
+@RecomendadorDeDonacion_HostAddress = http://localhost:5062
+
+GET {{RecomendadorDeDonacion_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

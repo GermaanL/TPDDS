@@ -1,0 +1,49 @@
+
+Reporte Semanal [2024-11-06]
+
+Cantidad de Fallas por Heladera:
+
+Cantidad de Viandas Retiradas por Heladera:
+
+Cantidad de Viandas Colocadas por Heladera:
+
+Cantidad de Viandas por Colaborador:
+
+Reporte Semanal [2024-11-06]
+
+Cantidad de Fallas por Heladera:
+
+Cantidad de Viandas Retiradas por Heladera:
+Heladera 25: 10
+
+Cantidad de Viandas Colocadas por Heladera:
+Heladera 25: 10
+
+Cantidad de Viandas por Colaborador:
+Colaborador 1: 1
+
+Reporte Semanal [2024-11-06]
+
+Cantidad de Fallas por Heladera:
+
+Cantidad de Viandas Retiradas por Heladera:
+Heladera Heladera Falcon: 10
+
+Cantidad de Viandas Colocadas por Heladera:
+Heladera Heladera Falcon: 10
+
+Cantidad de Viandas por Colaborador:
+Colaborador admin: 1
+
+Reporte Semanal [2024-11-06]
+
+Cantidad de Fallas por Heladera:
+
+Cantidad de Viandas Retiradas por Heladera:
+Heladera "Heladera Falcon": 10
+
+Cantidad de Viandas Colocadas por Heladera:
+Heladera "Heladera Falcon": 10
+
+Cantidad de Viandas por Colaborador:
+Colaborador "admin": 1

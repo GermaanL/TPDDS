@@ -1,0 +1,164 @@
+{{#partial "contenido"}}
+
+    <section class="container w-75 mb-5">
+        <h3 class="h3 my-4 text-center">Técnicos</h3>
+
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-custom w-75 mb-3" data-bs-toggle="modal" data-bs-target="#tecnicoModal">
+                Cargar Técnico
+            </button>
+        </div>
+
+        <ul class="list-group list-group-flush overflow-auto" style="max-height: 150px;">
+            {{#each tecnicos}}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Nombre:</strong> {{this.nombre}} <br>
+                    </div>
+                    <div>
+                        <a href="/tecnico/{{this.id}}" class="btn btn-sm modificar">
+                            <img src="/img/modificar.png" alt="Modificar" width="20">
+                        </a>
+                        <button class="btn btn-sm eliminar" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#eliminarTecnicoModal">
+                            <img src="/img/eliminar.png" alt="Eliminar" width="20">
+                        </button>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <!-- Modal para cargar técnico -->
+    <div class="modal fade" id="tecnicoModal" tabindex="-1" aria-labelledby="tecnicoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tecnicoModalLabel">Cargar Técnico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form method="POST" action="/tecnicos/cargar">
+                        <!-- Fila 1: Nombre y Apellido -->
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-6">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre del técnico" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Apellido del técnico" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-6">
+                                <label for="tipoDocumento" class="form-label">Tipo de Documento</label>
+                                <select name="tipoDocumento" id="tipoDocumento" class="form-select">
+                                    <option selected>Seleccionar...</option>
+                                    {{#each tipoDocumento}}
+                                        <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="numeroDocumento" class="form-label">Número de Documento</label>
+                                <input name="numeroDocumento" type="text" class="form-control" id="numeroDocumento" placeholder="Número de documento" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cuil" class="form-label">CUIL</label>
+                            <input name="cuil" type="text" class="form-control" id="cuil" placeholder="CUIL del técnico">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-6">
+                                <label for="preferenciaContacto" class="form-label">Tipo de Contacto</label>
+                                <select name="preferenciaContacto" id="preferenciaContacto" class="form-select">
+                                    {{#each preferenciaContacto}}
+                                        <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="mediosDeContacto" class="form-label">Medio de Contacto</label>
+                                <input name="mediosDeContacto" type="text" class="form-control" id="mediosDeContacto" placeholder="Ej. teléfono, email">
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex align-items-center mb-3">
+                            <a href="https://web.telegram.org/k/#@ElBot20242911Grupo7DDS_bot" target="_blank">
+                                <img src="/img/telegram.png" alt="Telegram Logo" style="width: 50px; height: 50px; margin-right: 10px;">
+                            </a>
+                            <p class="mb-0">
+                                Para conectar con Telegram, haz clic en el logo y envíale un mensaje a nuestro bot para que te dé un ID. Ese es el ID que debe colocar en el campo de contacto.
+                            </p>
+                        </div>
+
+                        <!-- Direccion -->
+                        <fieldset class="border p-3 mb-3">
+                            <legend class="w-auto px-2 fs-6 text-uppercase fw-bold">Direccion</legend>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="inputCalle" class="form-label">Calle</label>
+                                    <input name="calle" type="text" class="form-control" id="inputCalle" placeholder="Calle Falsa" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="inputNumero" class="form-label">Número</label>
+                                    <input name="numeroCalle" type="text" class="form-control" id="inputNumero" placeholder="123" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="codigoPostal" class="form-label">CP</label>
+                                    <input name="cp" type="number" class="form-control" id="codigoPostal" placeholder="1407" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputLocalidad" class="form-label">Localidad</label>
+                                    <input name="localidad" type="text" class="form-control" id="inputLocalidad" placeholder="CABA" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputProvincia" class="form-label">Provincia</label>
+                                    <input name="provincia" type="text" class="form-control" id="inputProvincia" placeholder="Buenos Aires" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="mb-3">
+                            <label for="radioCobertura" class="form-label">Radio de Cobertura (en Km)</label>
+                            <input name="radioCoberturaEnKm" type="number" class="form-control" id="radioCobertura" placeholder="Radio de cobertura en kilómetros" required>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Confirmar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para Confirmación de Eliminación de Técnico -->
+    <div class="modal fade" id="eliminarTecnicoModal" tabindex="-1" aria-labelledby="eliminarTecnicoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarTecnicoLabel">Eliminar Técnico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar este técnico?</p>
+                    <form id="formEliminarTecnico" method="POST" action="/tecnicos/eliminar">
+                        <input type="hidden" name="id" id="eliminarTecnicoId">
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/scriptAdmin.js"></script>
+{{/partial}}
+{{> templates/index}}

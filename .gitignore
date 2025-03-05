@@ -1,0 +1,42 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# maven build
+target/**
+
+# IJ files
+*.iml
+.idea/**
+
+#.net
+*.vsidx
+*.mdf
+*.ldf
+.vs/**
+/RecomendadorDeDonacion - Servicio TP anual/RecomendadorDeDonacion/.vs
+
+#src/main/resources/META-INF/persistence.xml
+#!src/main/resources/META-INF/.gitkeep habria que probar con esta
+
+#src/main/resources/public/img/ofertas/*
+#!src/main/resources/public/img/ofertas/.gitkeep

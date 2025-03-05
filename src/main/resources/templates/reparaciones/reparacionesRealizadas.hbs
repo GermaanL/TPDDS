@@ -1,0 +1,58 @@
+{{#partial "contenido"}}
+    <section class="container my-5">
+
+        <!-- Lista de reparaciones realizadas -->
+        <h1 class="text-center">Visitas Tecnicas Realizadas</h1>
+        <ul class="list-group list-group-flush">
+            {{#if visitasTecnicas}}
+                {{#each visitasTecnicas}}
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <!-- Información de la reparación -->
+                        <div>
+                            <strong>Heladera:</strong> {{heladera.nombre}}<br>
+                            <strong>Fecha Visita:</strong> {{fechaVisita}}<br>
+                            <strong>Causa:</strong> {{causa.tipoIncidente}} - {{causa.descripcion}}<br>
+                            <strong>Observaciones: </strong> {{observaciones}}<br>
+                            <strong>Solucionado: </strong>{{#if incidenteSolucionado}}Si{{else}}No{{/if}}<br>
+                            <strong>Reparado por: </strong>{{tecnico.nombre}} {{tecnico.apellido}} - {{tecnico.cuil}}
+                        </div>
+                        <!-- Imagen de la reparación -->
+                        {{#if foto}}
+                            <div>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalImagen-{{@index}}">
+                                    <img src="/uploads/visitasTecnicas/{{foto}}"
+                                         alt="{{foto}}"
+                                         class="img-fluid rounded shadow"
+                                         style="max-width: 100px;">
+                                </a>
+                            </div>
+                        {{/if}}
+                    </li>
+
+                    <!-- Modal para la imagen -->
+                    {{#if foto}}
+                        <div class="modal fade" id="modalImagen-{{@index}}" tabindex="-1" aria-labelledby="modalLabel-{{@index}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel-{{@index}}">Imagen de Reparación</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <img src="/uploads/visitasTecnicas/{{foto}}"
+                                             alt="{{foto}}"
+                                             class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{else}}
+                <li class="list-group-item">No hay reparaciones realizadas.</li>
+            {{/if}}
+        </ul>
+
+    </section>
+{{/partial}}
+{{> templates/index}}

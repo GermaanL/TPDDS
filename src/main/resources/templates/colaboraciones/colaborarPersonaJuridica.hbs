@@ -1,0 +1,341 @@
+{{#partial "contenido"}}
+    <section class="container text-center">
+        <h2 class="my-4 ">COLABORAR</h2>
+        <p class="w-75 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptas veniam eum error voluptatibus nihil iure iusto fugit, adipisci quasi explicabo praesentium, eligendi officia? Nesciunt vero ex fuga distinctio explicabo.</p>
+    </section>
+
+    <section class="container col col-md-6 mx-auto">
+
+
+        <div class="container mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg width="150" height="151" viewBox="0 0 150 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_72_192)">
+                            <path d="M18.75 75.5C18.75 82.8869 20.2049 90.2014 23.0318 97.0259C25.8586 103.851 30.0019 110.051 35.2252 115.275C40.4485 120.498 46.6495 124.641 53.4741 127.468C60.2986 130.295 67.6131 131.75 75 131.75C82.3869 131.75 89.7014 130.295 96.5259 127.468C103.351 124.641 109.551 120.498 114.775 115.275C119.998 110.051 124.141 103.851 126.968 97.0259C129.795 90.2014 131.25 82.8869 131.25 75.5C131.25 68.1131 129.795 60.7986 126.968 53.9741C124.141 47.1495 119.998 40.9485 114.775 35.7252C109.551 30.5019 103.351 26.3586 96.5259 23.5318C89.7014 20.7049 82.3869 19.25 75 19.25C67.6131 19.25 60.2986 20.7049 53.4741 23.5318C46.6495 26.3586 40.4485 30.5019 35.2252 35.7252C30.0019 40.9485 25.8586 47.1495 23.0318 53.9741C20.2049 60.7986 18.75 68.1131 18.75 75.5Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M92.5 56.75C91.3678 54.786 89.7228 53.1669 87.7411 52.066C85.7595 50.965 83.5157 50.4237 81.25 50.5H68.75C65.4348 50.5 62.2554 51.817 59.9112 54.1612C57.567 56.5054 56.25 59.6848 56.25 63C56.25 66.3152 57.567 69.4946 59.9112 71.8388C62.2554 74.183 65.4348 75.5 68.75 75.5H81.25C84.5652 75.5 87.7446 76.817 90.0888 79.1612C92.433 81.5054 93.75 84.6848 93.75 88C93.75 91.3152 92.433 94.4946 90.0888 96.8388C87.7446 99.183 84.5652 100.5 81.25 100.5H68.75C66.4843 100.576 64.2405 100.035 62.2589 98.934C60.2772 97.8331 58.6322 96.214 57.5 94.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M75 44.25V106.75" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_72_192">
+                                <rect width="150" height="150" fill="white" transform="translate(0 0.5)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Donar Dinero
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Donacion de dinero</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form method="POST" action="/colaborar/donacionDeDinero">
+                                        <div class="mb-3">
+                                            <label for="inputCantidad" class="form-label">Cantidad</label>
+                                            <input name="valor" class="form-control" id="inputCantidad" placeholder="Cantidad a donar">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="inputPeriodica" class="form-label">Donacion Periodica</label>
+                                            <select name="frecuencia" id="inputPeriodica" class="form-select">
+                                                <option selected>Seleccionar...</option>
+                                                {{#each frecuencia}}
+                                                    <option value="{{this}}">{{this}}</option>
+                                                {{/each}}
+                                            </select>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Confirmar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container  mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg width="150" height="150" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_19_26)">
+                            <path d="M21.125 21.1667C21.125 18.9566 21.9942 16.837 23.5414 15.2742C25.0885 13.7113 27.187 12.8334 29.375 12.8334H70.625C72.813 12.8334 74.9115 13.7113 76.4586 15.2742C78.0058 16.837 78.875 18.9566 78.875 21.1667V79.5C78.875 81.7102 78.0058 83.8298 76.4586 85.3926C74.9115 86.9554 72.813 87.8334 70.625 87.8334H29.375C27.187 87.8334 25.0885 86.9554 23.5414 85.3926C21.9942 83.8298 21.125 81.7102 21.125 79.5V21.1667Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21.125 42.0001H78.875" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M37.625 54.5001V67.0001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M37.625 25.3334V29.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_19_26">
+                                <rect width="99" height="100" fill="white" transform="translate(0.5 0.333374)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#healderaModal">
+                        Donar Heladera
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" style="--bs-modal-width:800px" id="healderaModal" tabindex="-1" aria-labelledby="healderaModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="healderaModalLabel">Donacion de Heladera</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form method="POST" action="/colaborarPersonaJuridica/heladera" id="formDonarHeladera">
+                                        <div class="mb-3">
+                                            <label for="inputNombreHeladera" class="form-label">Nombre</label>
+                                            <input name="nombre" type="text" class="form-control" id="inputNombreHeladera" placeholder="Heladera UTN Medrano">
+                                        </div>
+
+                                        <!-- Direccion -->
+                                        <fieldset class="border  p-3 mb-3">
+                                            <legend class="w-auto px-2 fs-6 text-uppercase fw-bold">Direccion</legend>
+                                            <div class="row g-3 mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="inputCalle" class="form-label">Calle</label>
+                                                    <input name="calle" type="text" class="form-control" id="inputCalle" placeholder="Calle Falsa">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="inputNumero" class="form-label">Número</label>
+                                                    <input name="numeroCalle" type="text" class="form-control" id="inputNumero" placeholder="123">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="codigoPostal" class="form-label">CP</label>
+                                                    <input name="cp" type="number" class="form-control" id="codigoPostal" placeholder="1407">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="inputLocalidad" class="form-label">Localidad</label>
+                                                    <input name="localidad" type="text" class="form-control" id="inputLocalidad" placeholder="CABA">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="inputProvincia" class="form-label">Provincia</label>
+                                                    <input name="provincia" type="text" class="form-control" id="inputProvincia" placeholder="Buenos Aires">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-md-6">
+                                                <label for="fechaColocacion" class="form-label">Fecha de Colocacion</label>
+                                                <input name="fechaColocacion" type="date" class="form-control" id="fechaColocacion">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="capacidad" class="form-label">Capacidad en Unidades</label>
+                                                <input name="capacidad" type="text" class="form-control" id="capacidad" placeholder="8">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tempMin" class="form-label">Temp. Minima</label>
+                                                <input name="tempMin" type="number" class="form-control" id="tempMin" placeholder="20">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="tempMax" class="form-label">Temp. Maxima</label>
+                                                <input name="tempMax" type="number" class="form-control" id="tempMax" placeholder="30">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <button type="button" class="btn btn-custom" id="btnRecomendarPuntos">Recomendar puntos estratégicos</button>
+                                        </div>
+
+                                        <div id="mapContainer" class="mb-3" style="display: none; height: 400px;">
+                                            <div id="map" class="rounded-5" style="height: 100%;"></div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Confirmar</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container  mt-4">
+            <div class="row d-flex align-items-center">
+                <!-- Columna para el SVG -->
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <svg width="150" height="150" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_255_20)">
+                            <path d="M81.383 18.076C81.259 18.024 81.129 18.009 81 18.009V18H68H56H44C43.734 18 43.48 18.105 43.293 18.293L31.294 30.292C31.113 30.473 31 30.723 31 31V56C31 56.553 31.447 57 32 57H69C69.277 57 69.527 56.887 69.708 56.706L81.707 44.707C81.895 44.52 82 44.266 82 44V19C82 18.596 81.757 18.23 81.383 18.076ZM68.586 30H58.414L68.414 20H78.586L68.586 30ZM65.586 20L55.293 30.293C55.105 30.48 55 30.734 55 31V40.132L53.555 39.168C53.219 38.943 52.782 38.943 52.446 39.168L50 40.798L47.555 39.168C47.387 39.056 47.193 39 47 39C46.807 39 46.613 39.056 46.445 39.168L45 40.132V31.414L56.414 20H65.586ZM44.414 20H53.586L43.586 30H34.414L44.414 20ZM68 55H33V32H43V42C43 42.369 43.203 42.708 43.528 42.882C43.852 43.056 44.248 43.036 44.554 42.832L47 41.202L49.445 42.832C49.781 43.057 50.218 43.057 50.554 42.832L53 41.202L55.445 42.832C55.612 42.943 55.806 43 56 43C56.162 43 56.324 42.961 56.472 42.882C56.797 42.708 57 42.369 57 42V32H68V55ZM80 43.586L70 53.586V31.414L80 21.414V43.586Z" fill="black"/>
+                            <path d="M37 77C37.553 77 38 76.553 38 76H40.764L51.455 81.346C51.917 81.577 52.418 81.693 52.917 81.693C53.486 81.693 54.054 81.544 54.563 81.247L76.379 68.52C77.379 67.937 78 66.856 78 65.698C78 64.731 77.575 63.819 76.835 63.196C76.096 62.574 75.122 62.312 74.172 62.477L54.34 65.926L48.707 60.293C48.52 60.105 48.266 60 48 60H38C38 59.447 37.553 59 37 59H33H18V61H32V75H18V77H33H37ZM47.586 62L55.465 69.879C55.805 70.219 56 70.69 56 71.172C56 72.18 55.18 73 54.172 73C53.691 73 53.219 72.805 52.879 72.465L47.707 67.293L46.293 68.707L51.465 73.879C52.188 74.602 53.149 75 54.172 75C56.282 75 58 73.282 58 71.172C58 70.15 57.602 69.188 56.879 68.465L56.069 67.655L74.513 64.447C74.886 64.38 75.26 64.484 75.547 64.726C75.835 64.968 76 65.322 76 65.697C76 66.146 75.759 66.566 75.371 66.792L53.556 79.519C53.186 79.735 52.735 79.749 52.35 79.557L41.448 74.106C41.309 74.036 41.155 74 41 74H38V62H47.586ZM36 75H34V61H36V75Z" fill="black"/>
+                            <path d="M27 27C27 27.553 27.447 28 28 28C28.553 28 29 27.553 29 27C29 25.346 30.346 24 32 24C32.553 24 33 23.553 33 23C33 22.447 32.553 22 32 22C30.346 22 29 20.654 29 19C29 18.447 28.553 18 28 18C27.447 18 27 18.447 27 19C27 20.654 25.654 22 24 22C23.447 22 23 22.447 23 23C23 23.553 23.447 24 24 24C25.654 24 27 25.346 27 27ZM28 21.997C28.285 22.377 28.623 22.715 29.003 23C28.623 23.285 28.285 23.623 28 24.003C27.715 23.623 27.377 23.285 26.997 23C27.377 22.715 27.715 22.377 28 21.997Z" fill="black"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_255_20">
+                                <rect width="64" height="64" fill="white" transform="translate(18 18)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-custom w-75" data-bs-toggle="modal" data-bs-target="#productosModal">
+                        Ofrecer Producto o Servicio
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade custom-fade" id="productosModal" tabindex="-1" aria-labelledby="productosModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="productosModalLabel">Oferta de Productos o Servicios</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form id="formOfertas" method="POST" action="/colaborarPersonaJuridica/ofertaProducto" enctype="multipart/form-data">
+                                        <!-- Campo para el nombre de la oferta -->
+                                        <div class="mb-3">
+                                            <label for="inputNombreOferta" class="form-label">Nombre de la oferta</label>
+                                            <input name="nombreOferta" type="text" class="form-control" id="inputNombreOferta" placeholder="Ingrese el nombre de la oferta" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="inputRubro" class="form-label">Rubro de la oferta</label>
+                                            <input name="rubro" type="text" class="form-control" id="inputRubro" placeholder="Ingrese el rubro de la oferta" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="cantidadProducto" class="form-label">Stock de la oferta</label>
+                                            <input name="stock" type="text" class="form-control" id="cantidadProducto" placeholder="1" required>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                            <label for="inputTipoOferta" class="form-label">Tipo de Oferta</label>
+                                            <select name="tipoOferta" id="inputTipoOferta" class="form-select">
+                                                {{#each tipoOferta}}
+                                                    <option value="{{this}}">{{this}}</option>
+                                                {{/each}}
+                                            </select>
+                                        </div>
+
+                                        <!-- Campo para la cantidad de puntos necesarios -->
+                                        <div class="mb-3">
+                                            <label for="inputPuntosOferta" class="form-label">Puntos necesarios</label>
+                                            <input name="puntosNecesarios" type="number" class="form-control" id="inputPuntosOferta" placeholder="Ingrese la cantidad de puntos" required>
+                                        </div>
+
+                                        <!-- Campo opcional para subir una imagen ilustrativa -->
+                                        <div class="mb-3">
+                                            <label for="inputImagenOferta" class="form-label">Imagen ilustrativa (opcional)</label>
+                                            <input name="imagen" type="file" class="form-control" id="inputImagenOferta" accept="image/*">
+                                        </div>
+
+                                        <!-- Botones para confirmar o cancelar -->
+                                        <div class="d-flex justify-content-between">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-success">Confirmar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container w-50 mb-5">
+        <h3 class="h3 my-4 text-center">Mis Colaboraciones</h3>
+        <ul class="list-group list-group-flush overflow-auto" style="max-height: 150px;">
+            {{#each colaboraciones}}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span class="li_span">{{this.tipo.nombre}}</span>
+                    <span class="li_span">{{formatDate this.fechaAlta}}</span>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <section class="container w-75 mb-5">
+        <h3 class="h3 my-4 text-center">Reparaciones de mis Heladeras</h3>
+        <ul class="list-group list-group-flush overflow-auto" style="max-height: 400px;">
+            {{#if visitasTecnicas}}
+                {{#each visitasTecnicas}}
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <!-- Información de la reparación -->
+                        <div>
+                            <strong>Heladera:</strong> {{heladera.nombre}}<br>
+                            <strong>Fecha Visita:</strong> {{fechaVisita}}<br>
+                            <strong>Causa:</strong> {{causa.tipoIncidente}} - {{causa.descripcion}}<br>
+                            <strong>Observaciones: </strong> {{observaciones}}<br>
+                            <strong>Solucionado: </strong>{{#if incidenteSolucionado}}Si{{else}}No{{/if}}<br>
+                            <strong>Reparado por: </strong>{{tecnico.nombre}} {{tecnico.apellido}} - {{tecnico.cuil}}
+                        </div>
+                        <!-- Imagen de la reparación -->
+                        {{#if foto}}
+                            <div>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalImagen-{{@index}}">
+                                    <img src="/uploads/reportes/{{foto}}"
+                                         alt="{{foto}}"
+                                         class="img-fluid rounded shadow"
+                                         style="max-width: 100px;">
+                                </a>
+                            </div>
+                        {{/if}}
+                    </li>
+
+                    <!-- Modal para la imagen -->
+                    {{#if foto}}
+                        <div class="modal fade" id="modalImagen-{{@index}}" tabindex="-1" aria-labelledby="modalLabel-{{@index}}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel-{{@index}}">Imagen de Reparación</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="/uploads/reportes/{{foto}}"
+                                             alt="{{foto}}"
+                                             class="img-fluid rounded">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/each}}
+            {{else}}
+                <li class="list-group-item text-center">No hay reparaciones realizadas.</li>
+            {{/if}}
+        </ul>
+    </section>
+
+{{/partial}}
+{{> templates/index}}

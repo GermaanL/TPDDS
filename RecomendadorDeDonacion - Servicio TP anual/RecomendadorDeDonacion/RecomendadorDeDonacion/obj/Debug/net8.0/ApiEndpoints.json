@@ -1,0 +1,64 @@
+[
+  {
+    "ContainingType": "RecomendadorDeDonacion.Controllers.LugaresController",
+    "Method": "CrearLugar",
+    "RelativePath": "servicio/Lugares",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lugar",
+        "Type": "RecomendadorDeDonacion.Domain.Lugar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "RecomendadorDeDonacion.Domain.Lugar",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RecomendadorDeDonacion.Controllers.LugaresController",
+    "Method": "ObtenerPuntoMasCercano",
+    "RelativePath": "servicio/Lugares",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "latitud",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "longitud",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "radio",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[RecomendadorDeDonacion.DTOs.LugarConDistanciaDTO, RecomendadorDeDonacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

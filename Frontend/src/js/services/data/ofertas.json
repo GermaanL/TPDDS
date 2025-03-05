@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Producto 1",
+        "descripcion": "Descripción breve del producto o servicio 1.",
+        "puntos": 500,
+        "imagen": "https://via.placeholder.com/300"
+    },
+    {
+        "id": 2,
+        "nombre": "Producto 2",
+        "descripcion": "Descripción breve del producto o servicio 2.",
+        "puntos": 750,
+        "imagen": "https://via.placeholder.com/300"
+    },
+    {
+        "id": 3,
+        "nombre": "Producto 3",
+        "descripcion": "Descripción breve del producto o servicio 3.",
+        "puntos": 1000,
+        "imagen": "https://via.placeholder.com/300"
+    }
+]

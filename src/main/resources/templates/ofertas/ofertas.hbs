@@ -1,0 +1,31 @@
+{{#partial "contenido"}}
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Productos y Servicios</h2>
+
+        <div class="w-100 w-lg-50 text-center mx-auto">
+            <p class="mt-3 mb-5 text-center fs-4">Puntos Acumulados: <span id="puntosAcumulados" class="fw-bold">{{puntosColaborador}}</span></p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="catalogo">
+            <!-- Las tarjetas de productos y servicios se generarán dinámicamente -->
+            {{#each ofertas}}
+                <div class="card h-100">
+                    <img src="uploads/ofertas/{{this.imagen}}" class="card-img-top" alt="{{this.nombre}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.nombre}}</h5>
+                        <h5 class="card-title">{{this.tipoOferta}}</h5>
+                        <h5 class="card-title">{{this.rubro}}</h5>
+                        <p class="card-text"><strong>{{this.puntosNecesarios}} Puntos</strong></p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <form method="POST" action="/oferta/{{this.id}}">
+                            <button type="submit" class="btn btn-primary">Intercambiar</button>
+                        </form>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/partial}}
+
+{{> templates/index}}
